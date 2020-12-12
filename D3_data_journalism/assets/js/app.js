@@ -1,4 +1,4 @@
-var svgWidth = 960;
+var svgWidth = 750;
 var svgHeight = 500;
 
 var margin = {
@@ -33,7 +33,7 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
     // Step 2: Create scale functions
     // ==============================
     var xLinearScale = d3.scaleLinear()
-      .domain([10, d3.max(healthData, d => d.poverty)])
+      .domain(d3.extent(healthData, d => d.poverty))
       .range([0, width]);
 
     var yLinearScale = d3.scaleLinear()
@@ -65,6 +65,23 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
     .attr("r", "15")
     .attr("fill", "blue")
     .attr("opacity", ".5");
+
+    var circleLabels = chartGroup.selectAll().data(healthData).enter().append("text");
+
+    circleLabels
+      .attr("x", function(d) {
+        return xLinearScale(d.poverty);
+      })
+      .attr("y", function(d) {
+        return yLinearScale(d.healthcare);
+      })
+      .text(function(d) {
+        return d.abbr;
+      })
+      .attr("font-family", "arial")
+      .attr("font-size", "8px")
+      .attr("text-anchor", "middle")
+      .attr("fill", "white");
 
     // Step 6: Initialize tool tip
     // ==============================
