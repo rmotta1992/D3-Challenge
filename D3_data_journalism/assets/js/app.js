@@ -59,9 +59,9 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
     .attr("fill", "#89bdd3")
     .attr("opacity", ".5");
 
-    var circleLabels = chartGroup.selectAll().data(healthData).enter().append("text");
+    var stateNames = chartGroup.selectAll().data(healthData).enter().append("text");
 
-    circleLabels
+    stateNames
       .attr("x", function(d) {
         return xLinearScale(d.poverty);
       })
@@ -74,12 +74,11 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
       .attr("font-family", "arial")
       .attr("font-size", "8px")
       .attr("text-anchor", "middle")
-      .attr("fill", "white");
+      .attr("fill", "black");
 
     
     var toolTip = d3.tip()
       .attr("class", "tooltip")
-      .attr("background", "green")
       .offset([80, -60])
       .html(function(d) {
         return (`${d.state}<br>Poverty: ${d.poverty}<br>Healthcare: ${d.healthcare}`);
