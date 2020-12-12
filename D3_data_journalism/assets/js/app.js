@@ -12,7 +12,7 @@ var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
 
-var svg = d3.select(".scatter")
+var svg = d3.select("#scatter")
   .append("svg")
   .attr("width", svgWidth)
   .attr("height", svgHeight);
@@ -29,7 +29,7 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
     });
 
     var xLinearScale = d3.scaleLinear()
-      .domain(d3.extent(healthData, d => d.poverty))
+      .domain([8, d3.max(healthData, d => d.poverty)])
       .range([0, width]);
 
     var yLinearScale = d3.scaleLinear()
