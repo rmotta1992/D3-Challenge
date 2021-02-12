@@ -22,8 +22,8 @@ HTML - used to design the website
 CSS - used for webstire features
 
 ## Findings
-    1.	When comparing obesity against the other factors one correlation that sticks out is that the poorer a person is the more likely they are to be obese. People in states with a median income of around $40,000 are fore more likely to suffer from obesity than those in states with incomes closer to $75,000.
+1.	When comparing obesity against the other factors one correlation that sticks out is that the poorer a person is the more likely they are to be obese. People in states with a median income of around $40,000 are fore more likely to suffer from obesity than those in states with incomes closer to $75,000.
 
-    2.	Similarly states with a higher percentage of its citizens living in poverty also had higher percentage of smokers. States with over 20% poverty also had well over 20% of its people smoking.
+2.	Similarly states with a higher percentage of its citizens living in poverty also had higher percentage of smokers. States with over 20% poverty also had well over 20% of its people smoking.
 
-    3.	When looking at states with a lack of healthcare, Texas was found to be a large outlier. In all three comparisons it performed worse than any other state. Being the second most populous state, this can be a worry trend for them.  
+3.	When looking at states with a lack of healthcare, Texas was found to be a large outlier. In all three comparisons it performed worse than any other state. Being the second most populous state, this can be a worry trend for them.  
